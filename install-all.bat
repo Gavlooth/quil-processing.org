@@ -1,7 +1,14 @@
-call mvn deploy:deploy-file -Dfile=processing.org-libs/video/library/gstreamer-java.jar -DartifactId=gstreamer-java -Dversion=101 -DgroupId=gstreamer-java -Dpackaging=jar -Durl=file:maven_repository
 
-call mvn deploy:deploy-file -Dfile=processing.org-libs/video/library/jna.jar -DartifactId=jna -Dversion=101 -DgroupId=jna -Dpackaging=jar -Durl=file:maven_repository
+ 
+ 
+call mvn install:install-file  -DgroupId=jna  -DartifactId=jna  -Dversion=1 -Dfile=processing.org-libs/video/library/jna.jar -Dversion=1 -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
 
-call mvn deploy:deploy-file -Dfile=processing.org-libs/sound/library/sound.jar -DartifactId=sound -Dversion=101 -DgroupId=sound -Dpackaging=jar -Durl=file:maven_repository
 
-call mvn deploy:deploy-file -Dfile=processing.org-libs/video/library/video.jar -DartifactId=video -Dversion=101 -DgroupId=video -Dpackaging=jar -Durl=file:maven_repository
+call mvn install:install-file -DgroupId=gstreamer-java -DartifactId=gstreamer-java -Dversion=1 -Dfile=processing.org-libs/video/library/gstreamer-java.jar -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
+
+
+call mvn install:install-file  -DgroupId=sound  -DartifactId=sound  -Dversion=1 -Dfile=processing.org-libs/sound/library/sound.jar -Dversion=1 -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
+
+
+call mvn install:install-file -DgroupId=video -DartifactId=video -Dversion=1 -Dfile=processing.org-libs/video/library/video.jar -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=. -DcreateChecksum=true
+
